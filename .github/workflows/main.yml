@@ -2,7 +2,7 @@
 
 name: CI
 env:
-  APP_name: "my test"
+  APP_name: "my test actions"
   Packege_name: "flask-ver-${{ github.sha }}"
 
 on:
@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Git copy repository
         uses: actions/checkout@v2
+        
+      - name: List current folder
+        run: ls -la
 
       - name: Print Hello World
         run: echo Hello, world!
